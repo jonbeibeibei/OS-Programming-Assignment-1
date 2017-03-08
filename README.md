@@ -24,7 +24,7 @@ The output files from the program will be saved in the same directory.
 
 ## What it does
 
----
+
 ###Node class
 This class stores the information of the processes specified in the commands input text. There are several parameters in this class:
 
