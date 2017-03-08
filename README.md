@@ -1,7 +1,9 @@
-/* Programming Assignment 1 
-* Author 1: Jonathan Bei Qi Yang * ID: 1001619
-* Author 2: Ruth Wong Nam Ying
-* ID: 1001795 * Date: 08/03/2017 */ 
+[//]: # (Programming Assignment 1)
+[//]: # (Author 1: Jonathan Bei Qi Yang )
+[//]: # (ID: 1001619)
+[//]: # (Author 2: Ruth Wong Nam Ying)
+[//]: # (ID: 1001795 )
+[//]: # (Date: 08/03/2017)
 
 # OS-Programming-Assignment-1
 
