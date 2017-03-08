@@ -55,5 +55,5 @@ This method takes the process nodes as input, then uses multi-threading to handl
 ###ProgramThread class
 This class extends the Thread class, allowing the processes to be executed concurrently. 
 
-####run{}
+####run()
 This method takes the program information from the processes, breaks it down and executes it using Java’s Process Builder. When the process is successfully executed, it updates the static nodesCompleted variable so that runNodes() knows when to stop. 
