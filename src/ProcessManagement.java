@@ -1,3 +1,10 @@
+/* Programming Assignment 1 
+* Author 1 : Jonathan Bei Qi Yang
+* ID: 1001619
+* Author 2 : Ruth Wong Name Ying
+* ID: 1001795
+* Date: 08/03/2017 */
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
