@@ -1,11 +1,11 @@
-[//]: # (Programming Assignment 1)
-[//]: # (Author 1: Jonathan Bei Qi Yang )
-[//]: # (ID: 1001619)
-[//]: # (Author 2: Ruth Wong Nam Ying)
-[//]: # (ID: 1001795 )
-[//]: # (Date: 08/03/2017)
-
 # OS-Programming-Assignment-1
+Programming Assignment 1
+
+Jonathan Bei Qi Yang, 1001619
+
+Ruth Wong Nam Ying, 1001795 
+
+Date: 08/03/2017
 
 ## Purpose of our program
 Process management is an important concept in the study of computer systems engineering. This program aids the understanding of this concept by modelling the control and data dependencies of parent and child processes through the traversal of a Directed Acyclic Graph (DAG).
