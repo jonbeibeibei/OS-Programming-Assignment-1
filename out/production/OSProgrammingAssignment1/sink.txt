@@ -1,1 +1,3 @@
-       0       0       0 total
+      51     643    3620 outcity.txt
+      62     753    4210 outParis.txt
+     113    1396    7830 total

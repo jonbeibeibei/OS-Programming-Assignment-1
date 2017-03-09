@@ -283,7 +283,7 @@ class ProgramThread extends Thread{
                 runningNode.setStatus(Node.FINISHED); // set the node's status to FINISHED
 
                 //notify nodes of children of FINISHED status of node
-                if(runningNode.getChildren()!=null){
+                if(!runningNode.getChildren().isEmpty()){
                     for(Integer child: runningNode.getChildren()){
                         nodes.get(child).parentDone();
                     }
@@ -301,7 +301,7 @@ class ProgramThread extends Thread{
             System.out.println("Node " + runningNode.getId() + " did not execute successfully, this may impact the progress" +
                     " of other nodes");
         }catch (IndexOutOfBoundsException e){
-            System.out.println("Index out of bounds exception");
+            System.out.println("node: " + runningNode.getId() + " Index out of bounds exception");
 
         }
 
