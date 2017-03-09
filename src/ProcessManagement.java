@@ -25,6 +25,8 @@ public class ProcessManagement{
         //Instantiating the nodes
         ArrayList<Node> nodes = instantiateNodes(fileName);
 
+        printGraph(nodes);
+
         runNodes(nodes, currentDirectory);
 
     }
@@ -57,7 +59,7 @@ public class ProcessManagement{
 
                 for (String child: nodeInformation[1].split(" ")){
                     if(child.equals("none")){
-                        children = null ;
+                        children = new ArrayList<>() ;
                         break; // break if no children found for current node
                     }
                     else{
@@ -121,6 +123,57 @@ public class ProcessManagement{
         return nodes;
 
 
+    }
+
+    /**
+     * Method that prints out the relevant details of every node in the graph. Prints the node's parents,
+     * children, Command, InputFile, OutputFile, whether its runnable, as well as whether its been executed
+     * @param nodes
+     */
+
+    public static void printGraph(ArrayList<Node> nodes){
+        System.out.println();
+        System.out.println("Graph info:");
+        try{
+            for(Node node: nodes){
+                System.out.println("Node " + node.getId() + ": \nParent: ");
+                if (node.getParents().isEmpty()){
+                    System.out.print("none");
+                }
+                else {
+                    for (int parentNode : node.getParents()) {
+                        System.out.print(parentNode + " ");
+                    }
+                }
+                System.out.println("\nChildren: ");
+                try {
+                    if (node.getChildren().isEmpty()) {
+                        System.out.print("none");
+                    } else {
+                        for (int childNode : node.getChildren()) {
+                            System.out.print(childNode + " ");
+                        }
+                    }
+                }
+                //Catch exception in the event that issues with children node parsing
+                catch (NullPointerException e){
+                    System.out.println(" ");
+                }
+                System.out.print("\nCommand: "+node.getProgram()+"    ");
+                System.out.print("\nInput File: "+ node.getInput()+"    ");
+                System.out.println("\nOutput File: " + node.getOutput() + "    ");
+                System.out.println("Runnable: " + (node.getNumberOfParentsDone() == node.getNumberOfParents() && node.getStatus() == Node.READY));
+                System.out.println("Executed: "+ (node.getStatus() == 3));
+                System.out.println("\n");
+            }
+        }
+        // Catch any overall exceptions to this method, to allow the program to continue in the event that
+        // printing the graph fails
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Exception while printing graph!");
+            return;
+        }
     }
 
     /**
@@ -324,6 +377,10 @@ class Node{
         return finishedParents;
     }
 
+    public ArrayList<Integer> getParents(){
+        return parents;
+    }
+
     //setter methods
 
     public void setStatus(int status) {
@@ -339,4 +396,6 @@ class Node{
      public void parentDone(){
          finishedParents++;
      }
+
 }
+
